@@ -357,6 +357,11 @@ MigrationBackup/
 .ionide/
 
 # End of https://www.toptal.com/developers/gitignore/api/csharp
-SaveMyMoney.Android/obj
-SaveMyMoney/bin
-SaveMyMoney/obj
+SaveMyMoney.Android/obj/Debug
+SaveMyMoney.Android/obj/Release
+SaveMyMoney.Android/bin/Debug
+SaveMyMoney.Android/bin/Release
+SaveMyMoney/bin/Debug
+SaveMyMoney/bin/Release
+SaveMyMoney/obj/Debug
+SaveMyMoney/obj/Release
