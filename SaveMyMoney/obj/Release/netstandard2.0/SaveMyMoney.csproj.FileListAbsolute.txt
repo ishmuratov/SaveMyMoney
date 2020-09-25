@@ -1,0 +1,17 @@
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\bin\Release\netstandard2.0\SaveMyMoney.deps.json
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\bin\Release\netstandard2.0\SaveMyMoney.dll
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\bin\Release\netstandard2.0\ref\SaveMyMoney.dll
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\bin\Release\netstandard2.0\SaveMyMoney.pdb
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.csprojAssemblyReference.cache
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\AddNewGroupPage.xaml.g.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\App.xaml.g.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\NoteEntryPage.xaml.g.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\NotesPage.xaml.g.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.AssemblyInfoInputs.cache
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.AssemblyInfo.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.csproj.CoreCompileInputs.cache
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\XamlC.stamp
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.dll
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\ref\SaveMyMoney.dll
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.pdb
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\ReportPage.xaml.g.cs

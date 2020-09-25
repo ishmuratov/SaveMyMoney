@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SaveMyMoney.AddNewGroupPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+                <StackLayout>
+                    <Editor x:Name="EdNewGroupName" Placeholder="Enter name of new group..."
+                HeightRequest="100" />
+                    <Button x:Name="btCreate" Text="Add Group" Clicked="OnAddGroupClicked"/>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+                <StackLayout>
+                    <Picker x:Name="pickerGroups" Title="" SelectedIndexChanged="OnGroupChanged"/>
+                    <Button x:Name="btDelete" Text="Delete Group" Clicked="OnDeleteGroupClicked"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

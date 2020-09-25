@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SaveMyMoney.NotesPage"
+             Title="Save My Money">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Report" Clicked="OnReportClicked"
+                     />
+        <ToolbarItem Text="?"
+                     />
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+            <StackLayout>
+                <Label x:Name="LbTotalBalance" HorizontalOptions="CenterAndExpand"/>
+                <Label x:Name="LbTotalBalanceAmount" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="+" FontSize="Large" FontAttributes="Bold" HeightRequest="100" WidthRequest="250" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="#ABF2B0"
+                    Clicked="OnNoteAddedClicked" />
+                    <Button Grid.Column="1"
+                    Text="-" FontSize="Large" FontAttributes="Bold" HeightRequest="100" WidthRequest="250" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="#EBA9A9"
+                    Clicked="OnCostNoteAddedClicked"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+        <StackLayout>
+            <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Amount, StringFormat='Сумма: {0}'}"
+                          Detail="{Binding Date}"
+                          ImageSource="{Binding ImagePath}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

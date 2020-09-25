@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "GJwcI1AFgfqBu8EsFf8BNJoU7bYroQsnhy1OHABscP5hyzWw98TF+bMetNU7DysMpBHd3ItG5V6zIB0cesFivg==",
+  "success": true,
+  "projectFilePath": "D:\\CSharp\\Projects\\Mobile\\SaveMyMoney\\SaveMyMoney\\SaveMyMoney.iOS\\SaveMyMoney.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\skiasharp\\1.59.1\\skiasharp.1.59.1.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\skiasharp.views\\1.59.1.1\\skiasharp.views.1.59.1.1.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\skiasharp.views.forms\\1.59.1.1\\skiasharp.views.forms.1.59.1.1.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\s.ishmuratov\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+  ],
+  "logs": []
+}

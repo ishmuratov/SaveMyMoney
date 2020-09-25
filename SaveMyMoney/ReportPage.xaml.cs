@@ -1,0 +1,173 @@
+﻿using SaveMyMoney.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entry = Microcharts.Entry;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using SkiaSharp;
+using Microcharts;
+using Microcharts.Forms;
+
+namespace SaveMyMoney
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class ReportPage : ContentPage
+    {
+        public ReportPage()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            AddMonthesToPicker();
+            AddGroupsToPicker();
+        }
+
+        private void AddMonthesToPicker()
+        {
+            pickerMonth.Items.Add("January");
+            pickerMonth.Items.Add("February");
+            pickerMonth.Items.Add("March");
+            pickerMonth.Items.Add("Aprel");
+            pickerMonth.Items.Add("May");
+            pickerMonth.Items.Add("June");
+            pickerMonth.Items.Add("July");
+            pickerMonth.Items.Add("August");
+            pickerMonth.Items.Add("September");
+            pickerMonth.Items.Add("October");
+            pickerMonth.Items.Add("November");
+            pickerMonth.Items.Add("December");
+        }
+
+        private void AddGroupsToPicker()
+        {
+            pickerGroup.Items.Add("All costs");
+            pickerGroup.Items.Add("Total Income/Cost");
+            foreach (Group anyGroup in App.MoneyGroups.GroupList)
+            {
+                if (anyGroup.isCost)
+                {
+                    pickerGroup.Items.Add(anyGroup.Name);
+                }
+            }
+        }
+
+        private void OnMonthChanged(object sender, EventArgs e)
+        {
+            int selectedMonth = pickerMonth.SelectedIndex + 1;
+            int totalCost = GetTotalCost(selectedMonth);
+            int totalIncome = GetTotalIncome(selectedMonth);
+            lbTotalCost.Text = $"Total cost: {totalCost}";
+            lbTotalIncome.Text = $"Total income: {totalIncome}";
+
+            // Cost Entries
+
+            var costEnties = new List<Entry>();
+            var monthlyNotes = GetNotesPerMonth(selectedMonth);
+
+            foreach (Group anyGroup in App.MoneyGroups.GroupList)
+            {
+                if (anyGroup.isCost)
+                {
+                    int totalAmount = 0;
+                    foreach (Note anyNote in monthlyNotes)
+                    {
+                        if (anyNote.MoneyGroup != null && anyNote.MoneyGroup.Name.Equals(anyGroup.Name))
+                        {
+                            totalAmount += anyNote.Amount;
+                        }
+                    }
+                    Entry newEntry = new Entry(totalAmount)
+                    {
+                        Color = SKColor.Parse("#FF1943"),
+                        Label = anyGroup.Name,
+                        ValueLabel = totalAmount.ToString()
+                    };
+                    costEnties.Add(newEntry);
+                }
+            }
+
+            Chart4.Chart = new BarChart() { Entries = costEnties };
+            pickerGroup.SelectedIndex = 0;
+
+        }
+
+        private int GetTotalCost(int month)
+        {
+            int result = 0;
+            foreach (Note anyNote in App.DataBase.NotesList)
+            {
+                if (anyNote.Date.Month == month && anyNote.isCost)
+                {
+                    result += anyNote.Amount;
+                }
+            }
+            return result;
+        }
+
+        private int GetTotalIncome(int month)
+        {
+            int result = 0;
+            foreach (Note anyNote in App.DataBase.NotesList)
+            {
+                if (anyNote.Date.Month == month && !anyNote.isCost)
+                {
+                    result += anyNote.Amount;
+                }
+            }
+            return result;
+        }
+
+        private List<Note> GetNotesPerMonth(int monthNumber)
+        {
+            List<Note> notes = new List<Note>();
+            foreach (Note anyNote in App.DataBase.NotesList)
+            {
+                if (anyNote.Date.Month == monthNumber)
+                {
+                    notes.Add(anyNote);
+                }
+            }
+            return notes;
+        }
+
+        private void OnGroupChanged(object sender, EventArgs e)
+        {
+            // TODO
+            int selectedMonth = pickerMonth.SelectedIndex + 1;
+            int selectedGroupIndex = pickerGroup.SelectedIndex;
+            int totalCost = GetTotalCost(selectedMonth);
+            int totalIncome = GetTotalIncome(selectedMonth);
+
+            if (pickerGroup.Items[selectedGroupIndex] == "Total Income/Cost")
+            {
+                var entries = new List<Entry>
+                {
+                    new Entry(totalCost)
+                        {
+                            Color=SKColor.Parse("#FF1943"),
+                            Label ="TotalCost",
+                            ValueLabel =  totalCost.ToString()
+                        },
+
+                    new Entry(totalIncome)
+                        {
+                            Color = SKColor.Parse("#36D746"),
+                            Label = "TotalIncome",
+                            ValueLabel = totalIncome.ToString()
+                        }
+                };
+
+                Chart4.Chart = new BarChart() { Entries = entries };
+            }
+            if (pickerGroup.Items[selectedGroupIndex] == "All costs")
+            {
+                OnMonthChanged(sender, e);
+            }
+        }
+    }
+}

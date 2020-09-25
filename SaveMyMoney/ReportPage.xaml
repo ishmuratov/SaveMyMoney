@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SaveMyMoney.ReportPage"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout >
+
+                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
+                    <Picker x:Name="pickerMonth" Title="Choose a month" SelectedIndexChanged="OnMonthChanged"/>
+                </Frame>
+
+                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
+                    <StackLayout>
+                        <Label x:Name="lbTotalIncome" Text="Total Income: 0" TextColor="Green"
+                   HorizontalOptions="CenterAndExpand" />
+                        <Label x:Name="lbTotalCost" Text="Total cost: 0" TextColor="Red"
+                   HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
+                    <forms:ChartView x:Name="Chart4"  
+                             HeightRequest="220"/>
+                </Frame>
+
+                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
+                    <Picker x:Name="pickerGroup" Title="Choose a group" SelectedIndexChanged="OnGroupChanged"/>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
