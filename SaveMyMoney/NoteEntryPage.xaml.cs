@@ -72,11 +72,6 @@ namespace SaveMyMoney
         {
             var note = (Note)BindingContext;
 
-            if (File.Exists(note.Filename))
-            {
-                File.Delete(note.Filename);
-            }
-
             // Delete from DB
             App.DataBase.DeleteNote(note);
             await Navigation.PopAsync();

@@ -8,7 +8,6 @@ namespace SaveMyMoney.Models
     public class Note
     {
         public string ImagePath { get; set; } = "plus_removebg.png";
-        public string Filename { get; set; }
         public string Text { get; set; }
         public int Amount { get; set; }
         public DateTime Date { get; set; }
@@ -23,7 +22,6 @@ namespace SaveMyMoney.Models
         {
             isCost = cost;
             Amount = 0;
-            Filename = "";
             Text = "";
             Date = DateTime.Now;
         }
@@ -31,7 +29,6 @@ namespace SaveMyMoney.Models
         public Note(string text, int amount, Group group, bool cost)
         {
             Amount = amount;
-            Filename = "";
             Text = text;
             Date = DateTime.Now;
             MoneyGroup = group;
