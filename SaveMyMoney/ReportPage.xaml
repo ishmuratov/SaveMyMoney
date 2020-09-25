@@ -28,7 +28,7 @@
                 </Frame>
 
                 <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
-                    <Picker x:Name="pickerGroup" Title="Choose a group" SelectedIndexChanged="OnGroupChanged"/>
+                    <Picker x:Name="pickerMode" Title="Choose a mode" SelectedIndexChanged="OnModeChanged"/>
                 </Frame>
 
             </StackLayout>

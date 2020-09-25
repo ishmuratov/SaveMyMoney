@@ -45,15 +45,8 @@ namespace SaveMyMoney
 
         private void AddGroupsToPicker()
         {
-            pickerGroup.Items.Add("All costs");
-            pickerGroup.Items.Add("Total Income/Cost");
-            foreach (Group anyGroup in App.MoneyGroups.GroupList)
-            {
-                if (anyGroup.isCost)
-                {
-                    pickerGroup.Items.Add(anyGroup.Name);
-                }
-            }
+            pickerMode.Items.Add("All costs");
+            pickerMode.Items.Add("Total Income/Cost");
         }
 
         private void OnMonthChanged(object sender, EventArgs e)
@@ -92,7 +85,7 @@ namespace SaveMyMoney
             }
 
             Chart4.Chart = new BarChart() { Entries = costEnties };
-            pickerGroup.SelectedIndex = 0;
+            pickerMode.SelectedIndex = 0;
 
         }
 
@@ -135,17 +128,27 @@ namespace SaveMyMoney
             return notes;
         }
 
-        private void OnGroupChanged(object sender, EventArgs e)
+        private void OnModeChanged(object sender, EventArgs e)
         {
             // TODO
             int selectedMonth = pickerMonth.SelectedIndex + 1;
-            int selectedGroupIndex = pickerGroup.SelectedIndex;
+            int selectedGroupIndex = pickerMode.SelectedIndex;
             int totalCost = GetTotalCost(selectedMonth);
             int totalIncome = GetTotalIncome(selectedMonth);
 
-            if (pickerGroup.Items[selectedGroupIndex] == "Total Income/Cost")
+            if (pickerMode.Items[selectedGroupIndex] == "Total Income/Cost")
             {
-                var entries = new List<Entry>
+                GetTotalIncomeCostGraph(totalIncome, totalCost);
+            }
+            if (pickerMode.Items[selectedGroupIndex] == "All costs")
+            {
+                OnMonthChanged(sender, e);
+            }
+        }
+
+        private void GetTotalIncomeCostGraph(int totalIncome, int totalCost)
+        {
+            var entries = new List<Entry>
                 {
                     new Entry(totalCost)
                         {
@@ -161,13 +164,7 @@ namespace SaveMyMoney
                             ValueLabel = totalIncome.ToString()
                         }
                 };
-
-                Chart4.Chart = new BarChart() { Entries = entries };
-            }
-            if (pickerGroup.Items[selectedGroupIndex] == "All costs")
-            {
-                OnMonthChanged(sender, e);
-            }
+            Chart4.Chart = new BarChart() { Entries = entries };
         }
     }
 }
