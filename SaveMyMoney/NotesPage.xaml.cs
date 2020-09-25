@@ -89,10 +89,7 @@ namespace SaveMyMoney
 
         async void OnReportClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ReportPage
-            {
-                //BindingContext = new Note()
-            });
+            await Navigation.PushAsync(new ReportPage());
         }
     }
 }
