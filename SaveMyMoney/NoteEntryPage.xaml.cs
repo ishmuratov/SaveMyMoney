@@ -35,9 +35,9 @@ namespace SaveMyMoney
             pickerGroups.Items.Clear();
             foreach (Group anyGroup in App.MoneyGroups.GroupList)
             {
-                if (note.isCost && anyGroup.isCost)
+                if (note.isCost && anyGroup.isCost && anyGroup.Name != null)
                     pickerGroups.Items.Add(anyGroup.Name);
-                if (!note.isCost && !anyGroup.isCost)
+                if (!note.isCost && !anyGroup.isCost && anyGroup.Name != null)
                     pickerGroups.Items.Add(anyGroup.Name);
             }
         }

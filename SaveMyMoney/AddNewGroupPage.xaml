@@ -9,7 +9,7 @@
         <StackLayout>
             <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
                 <StackLayout>
-                    <Editor x:Name="EdNewGroupName" Placeholder="Enter name of new group..."
+                    <Editor x:Name="EdNewGroupName"
                 HeightRequest="100" />
                     <Button x:Name="btCreate" Text="Add Group" Clicked="OnAddGroupClicked"/>
                 </StackLayout>

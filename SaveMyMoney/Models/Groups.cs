@@ -15,8 +15,8 @@ namespace SaveMyMoney.Models
         public Groups()
         {
             GroupList = new List<Group>();
-            GroupList.Add(new Group { ID = 0, Name = "Зарплата", isCost = false });
-            GroupList.Add(new Group { ID = 0, Name = "Аванс" , isCost = false});
+            GroupList.Add(new Group { ID = 0, Name = LangSettings.SALARY, isCost = false });
+            GroupList.Add(new Group { ID = 0, Name = LangSettings.PRIZE , isCost = false});
         }
 
         public void AddGroup(Group newGroup)
