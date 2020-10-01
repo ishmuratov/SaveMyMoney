@@ -44,6 +44,11 @@ namespace SaveMyMoney
 
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
+            if (pickerGroups.Title == "")
+            {
+                await DisplayAlert("Warning", "Group is empty!", "OK");
+                return;
+            }
             var note = (Note)BindingContext;
             Note newOrModifiedNote = App.DataBase.FindNoteOrReturnNULL(note);
             if (num_amount.Text == "")
