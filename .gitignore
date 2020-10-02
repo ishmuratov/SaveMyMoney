@@ -1,11 +1,7 @@
-SaveMyMoney.Android/obj/Debug
-SaveMyMoney.Android/obj/Release
-SaveMyMoney.Android/bin/Debug
-SaveMyMoney.Android/bin/Release
-SaveMyMoney/bin/Debug
-SaveMyMoney/bin/Release
-SaveMyMoney/obj/Debug
-SaveMyMoney/obj/Release
+SaveMyMoney.Android/obj/
+SaveMyMoney.Android/bin/
+SaveMyMoney/bin/
+SaveMyMoney/obj/
 SaveMyMoney/obj/Debug/netstandard2.0/SaveMyMoney.csprojAssemblyReference.cache
 SaveMyMoney.Android/obj/Debug/90/android/assets/SaveMyMoney.dll
 SaveMyMoney.Android/obj/Debug/90/android/assets/SaveMyMoney.pdb

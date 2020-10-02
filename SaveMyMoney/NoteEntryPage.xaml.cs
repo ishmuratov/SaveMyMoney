@@ -58,8 +58,17 @@ namespace SaveMyMoney
             if (newOrModifiedNote == null)
             {
                 // Add in DB
-                Note newNote = new Note(note.Text, int.Parse(num_amount.Text), App.MoneyGroups.FindGroupOrReturnNULL(pickerGroups.Items[pickerGroups.SelectedIndex]), note.isCost);
-                App.DataBase.AddNote(newNote);
+                bool TextToIntResult = int.TryParse(num_amount.Text, out int amount);
+                if (TextToIntResult)
+                {
+                    Note newNote = new Note(note.Text, amount, App.MoneyGroups.FindGroupOrReturnNULL(pickerGroups.Items[pickerGroups.SelectedIndex]), note.isCost);
+                    App.DataBase.AddNote(newNote);
+                }
+                else
+                {
+                    await DisplayAlert("Warning", "Bad amount!", "OK");
+                    return;
+                }
             }
             else
             {
