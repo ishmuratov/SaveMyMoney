@@ -44,7 +44,7 @@ namespace SaveMyMoney
         {
             if (EdNewGroupName.Text == null)
             {
-                await DisplayAlert("Warning", "Group name is empty!", "OK");
+                await DisplayAlert(LangSettings.WARNING, LangSettings.GROUP_IS_EMPTY, "OK");
                 return;
             }
             Group newGroup = new Group { ID = 0, Name = EdNewGroupName.Text, isCost = this.isCost};

@@ -22,12 +22,28 @@ namespace SaveMyMoney
 
         protected override void OnAppearing()
         {
-            LbAmount.Text = "Amount:";
+            tbAddGroup.Text = LangSettings.ADD_GROPE;
+            btSave.Text = LangSettings.SAVE;
+            btDelete.Text = LangSettings.DELETE;
+            LbAmount.Text = LangSettings.AMOUNT + ":";
+            LbGroups.Text = LangSettings.GROUP + ":";
+            editComment.Placeholder = LangSettings.ENTER_YOUR_COMMENT + "...";
+            editComment.FontSize = 15;
             var note = (Note)BindingContext;
+            if (note.isCost)
+            {
+                num_amount.BackgroundColor = Color.FromHex("#EBA9A9");
+            }
+            else
+            {
+                num_amount.BackgroundColor = Color.FromHex("#ABF2B0");
+            }
+
             if (note.Amount == 0)
             {
                 num_amount.Text = "";
             }
+
             if (note.MoneyGroup != null)
             {
                 pickerGroups.Title = note.MoneyGroup.Name;

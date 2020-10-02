@@ -64,7 +64,8 @@ namespace SaveMyMoney
         {
             await Navigation.PushAsync(new NoteEntryPage
             {
-                BindingContext = new Note()
+                BindingContext = new Note(),
+                BackgroundColor = Color.AliceBlue
             });
         }
 
@@ -72,7 +73,8 @@ namespace SaveMyMoney
         {
             await Navigation.PushAsync(new NoteEntryPage
             {
-                BindingContext = new Note(true)
+                BindingContext = new Note(true),
+                BackgroundColor = Color.AliceBlue
             });
         }
 

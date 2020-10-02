@@ -19,11 +19,15 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Text="+" FontSize="Large" FontAttributes="Bold" HeightRequest="100" WidthRequest="250" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="#ABF2B0"
-                    Clicked="OnNoteAddedClicked" />
+                    <Button Text="+" FontSize="Large" FontAttributes="Bold"
+                            HeightRequest="120" WidthRequest="250" HorizontalOptions="Center" 
+                            TextColor="Gray" BackgroundColor="#ABF2B0"
+                            CornerRadius="10" Clicked="OnNoteAddedClicked" />
                     <Button Grid.Column="1"
-                    Text="-" FontSize="Large" FontAttributes="Bold" HeightRequest="100" WidthRequest="250" HorizontalOptions="Center" TextColor="Gray" BackgroundColor="#EBA9A9"
-                    Clicked="OnCostNoteAddedClicked"/>
+                            Text="-" FontSize="Large" FontAttributes="Bold"
+                            HeightRequest="120" WidthRequest="250" HorizontalOptions="Center"
+                            TextColor="Gray" BackgroundColor="#EBA9A9"
+                            CornerRadius="10" Clicked="OnCostNoteAddedClicked"/>
                 </Grid>
             </StackLayout>
         </Frame>

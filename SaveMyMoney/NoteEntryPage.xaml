@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SaveMyMoney.NoteEntryPage"
-             Title="Note Entry">
+             x:Class="SaveMyMoney.NoteEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add group" Clicked="OnAddNewGroup" />
+        <ToolbarItem x:Name="tbAddGroup" Text="Add group" Clicked="OnAddNewGroup" />
     </ContentPage.ToolbarItems>
     <StackLayout Margin="20">
         
         <Label x:Name="LbAmount"/>
         <Entry x:Name="num_amount" WidthRequest="100" Keyboard="Numeric" Text="{Binding Amount}" Focused="OnEntryFocused"/>
 
-        <Editor Placeholder="Enter your comment..."
+        <Editor x:Name="editComment"
                 Text="{Binding Text}"
                 HeightRequest="100" />
         
-        <Label x:Name="LbGroups" Text="Group:"/>
+        <Label x:Name="LbGroups"/>
         <Label x:Name="splitter2"/>
         <Picker x:Name="pickerGroups" Title="" SelectedIndexChanged="OnGroupChanged"/>
         
@@ -24,9 +23,10 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save"
+            <Button x:Name="btSave" Text="Save"
                     Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
+                    x:Name="btDelete"
                     Text="Delete"
                     Clicked="OnDeleteButtonClicked"/>
         </Grid>
