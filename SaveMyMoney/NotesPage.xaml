@@ -37,8 +37,8 @@
               ItemSelected="OnListViewItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell Text="{Binding Amount, StringFormat='Сумма: {0}'}"
-                          Detail="{Binding Date}"
+                        <ImageCell Text="{Binding TextAmount}"
+                          Detail="{Binding MoneyGroup}"
                           ImageSource="{Binding ImagePath}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>

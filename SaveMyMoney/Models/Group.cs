@@ -10,5 +10,13 @@ namespace SaveMyMoney.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public bool isCost { get; set; }
+
+        public override string ToString()
+        {
+            if (Name != null)
+                return Name;
+            else
+                return "NULL";
+        }
     }
 }
