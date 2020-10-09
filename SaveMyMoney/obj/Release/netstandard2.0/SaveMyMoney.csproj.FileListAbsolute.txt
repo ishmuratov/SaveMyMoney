@@ -15,3 +15,4 @@ D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netsta
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\ref\SaveMyMoney.dll
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\SaveMyMoney.pdb
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\ReportPage.xaml.g.cs
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Release\netstandard2.0\DetailsPage.xaml.g.cs

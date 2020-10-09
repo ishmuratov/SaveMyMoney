@@ -22,9 +22,12 @@
                    HorizontalOptions="CenterAndExpand" />
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
-                    <forms:ChartView x:Name="Chart4"  
-                             HeightRequest="220"/>
+                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
+                    <StackLayout>
+                        <forms:ChartView x:Name="Chart4"  
+                             HeightRequest="200"/>
+                        <Button x:Name="btDatails" HeightRequest="40" HorizontalOptions="End" Clicked="OnDatailsClicked"/>
+                    </StackLayout>
                 </Frame>
 
                 <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">

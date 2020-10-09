@@ -15,3 +15,4 @@ D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Debug\netstand
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Debug\netstandard2.0\ReportPage.xaml.g.cs
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Debug\netstandard2.0\SaveMyMoney.csproj.CoreCompileInputs.cache
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Debug\netstandard2.0\XamlC.stamp
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney\obj\Debug\netstandard2.0\DetailsPage.xaml.g.cs

@@ -10,21 +10,24 @@ using Xamarin.Forms.Xaml;
 using SkiaSharp;
 using Microcharts;
 using Microcharts.Forms;
+using SaveMyMoney.Helpers;
 
 namespace SaveMyMoney
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReportPage : ContentPage
     {
+        List<Note> monthlyNotes = new List<Note>();
         public ReportPage()
         {
             InitializeComponent();
+            btDatails.IsEnabled = false;
         }
 
         protected override void OnAppearing()
         {
             AddMonthesToPicker();
-            AddGroupsToPicker();
+            AddModeToPicker();
         }
 
         private void AddMonthesToPicker()
@@ -43,7 +46,7 @@ namespace SaveMyMoney
             pickerMonth.Items.Add("December");
         }
 
-        private void AddGroupsToPicker()
+        private void AddModeToPicker()
         {
             pickerMode.Items.Add("All costs");
             pickerMode.Items.Add("Total Income/Cost");
@@ -56,11 +59,12 @@ namespace SaveMyMoney
             int totalIncome = GetTotalIncome(selectedMonth);
             lbTotalCost.Text = $"Total cost: {totalCost}";
             lbTotalIncome.Text = $"Total income: {totalIncome}";
+            btDatails.Text = "Details ->";
 
             // Cost Entries
 
             var costEnties = new List<Entry>();
-            var monthlyNotes = GetNotesPerMonth(selectedMonth);
+            monthlyNotes = GetNotesPerMonth(selectedMonth);
 
             foreach (Group anyGroup in App.MoneyGroups.GroupList)
             {
@@ -86,7 +90,12 @@ namespace SaveMyMoney
 
             Chart4.Chart = new BarChart() { Entries = costEnties };
             pickerMode.SelectedIndex = 0;
+            btDatails.IsEnabled = true;
+        }
 
+        async private void OnDatailsClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DetailsPage(monthlyNotes));
         }
 
         private int GetTotalCost(int month)
