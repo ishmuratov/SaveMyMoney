@@ -11,7 +11,7 @@ namespace SaveMyMoney.Models
         public string ImagePath { get; set; } = "plus_removebg.png";
         public string Text { get; set; }
         public int Amount { get; set; }
-        public string TextAmount { get { return LangSettings.AMOUNT + ": " + Amount.ToString(); } }
+        public string TextAmount { get { return LangSettings.InstanceOf.AMOUNT + ": " + Amount.ToString(); } }
         public DateTime Date { get; set; }
         public bool isCost { get; set; }
         public Group MoneyGroup { get; set; }

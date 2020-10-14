@@ -31,34 +31,34 @@ namespace SaveMyMoney
             AddMonthesToPicker();
             AddModeToPicker();
             AddYearsToPicker();
-            pickerMonth.Title = LangSettings.CHOOSE_MONTH;
-            pickerMode.Title = LangSettings.CHOOSE_MODE;
+            pickerMonth.Title = LangSettings.InstanceOf.CHOOSE_MONTH;
+            pickerMode.Title = LangSettings.InstanceOf.CHOOSE_MODE;
             pickerYear.Title = DateTime.Now.Year.ToString();
-            lbTotalCost.Text = LangSettings.TOTAL_COST + ": 0";
-            lbTotalIncome.Text = LangSettings.TOTAL_INCOME + ": 0";
-            btDatails.IsEnabled = false;
+            lbTotalCost.Text = LangSettings.InstanceOf.TOTAL_COST + ": 0";
+            lbTotalIncome.Text = LangSettings.InstanceOf.TOTAL_INCOME + ": 0";
+            btDatails.IsVisible = false;
         }
 
         private void AddMonthesToPicker()
         {
-            pickerMonth.Items.Add(LangSettings.JENUARY);
-            pickerMonth.Items.Add(LangSettings.FEBRUARY);
-            pickerMonth.Items.Add(LangSettings.MARCH);
-            pickerMonth.Items.Add(LangSettings.APRIL);
-            pickerMonth.Items.Add(LangSettings.MAY);
-            pickerMonth.Items.Add(LangSettings.JUNE);
-            pickerMonth.Items.Add(LangSettings.JULY);
-            pickerMonth.Items.Add(LangSettings.AUGUST);
-            pickerMonth.Items.Add(LangSettings.SEPTEMBER);
-            pickerMonth.Items.Add(LangSettings.OCTOBER);
-            pickerMonth.Items.Add(LangSettings.NOVEMBER);
-            pickerMonth.Items.Add(LangSettings.DECEMBER);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.JENUARY);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.FEBRUARY);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.MARCH);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.APRIL);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.MAY);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.JUNE);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.JULY);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.AUGUST);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.SEPTEMBER);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.OCTOBER);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.NOVEMBER);
+            pickerMonth.Items.Add(LangSettings.InstanceOf.DECEMBER);
         }
 
         private void AddModeToPicker()
         {
-            pickerMode.Items.Add(LangSettings.ALL_COSTS);
-            pickerMode.Items.Add(LangSettings.TOTAL_INCOME_COST);
+            pickerMode.Items.Add(LangSettings.InstanceOf.ALL_COSTS);
+            pickerMode.Items.Add(LangSettings.InstanceOf.TOTAL_INCOME_COST);
         }
 
         private void AddYearsToPicker()
@@ -85,9 +85,9 @@ namespace SaveMyMoney
             {
                 frTotal.BackgroundColor = Color.FromHex("#d0f6ce");
             }
-            lbTotalCost.Text = $"{LangSettings.TOTAL_COST}: {totalCost}";
-            lbTotalIncome.Text = $"{LangSettings.TOTAL_INCOME}: {totalIncome}";
-            btDatails.Text = LangSettings.DETAILS;
+            lbTotalCost.Text = $"{LangSettings.InstanceOf.TOTAL_COST}: {totalCost}";
+            lbTotalIncome.Text = $"{LangSettings.InstanceOf.TOTAL_INCOME}: {totalIncome}";
+            btDatails.Text = LangSettings.InstanceOf.DETAILS;
 
             // Cost Entries
 
@@ -118,7 +118,7 @@ namespace SaveMyMoney
 
             ChartBar.Chart = new BarChart() { Entries = costEnties};
             pickerMode.SelectedIndex = 0;
-            btDatails.IsEnabled = true;
+            btDatails.IsVisible = true;
         }
 
         async private void OnDatailsClicked(object sender, EventArgs e)
@@ -173,11 +173,11 @@ namespace SaveMyMoney
             int totalCost = GetTotalCost(selectedMonth);
             int totalIncome = GetTotalIncome(selectedMonth);
 
-            if (pickerMode.Items[selectedGroupIndex].Equals(LangSettings.TOTAL_INCOME_COST))
+            if (pickerMode.Items[selectedGroupIndex].Equals(LangSettings.InstanceOf.TOTAL_INCOME_COST))
             {
                 GetTotalIncomeCostGraph(totalIncome, totalCost);
             }
-            if (pickerMode.Items[selectedGroupIndex].Equals(LangSettings.ALL_COSTS))
+            if (pickerMode.Items[selectedGroupIndex].Equals(LangSettings.InstanceOf.ALL_COSTS))
             {
                 OnMonthChanged(sender, e);
             }
@@ -190,14 +190,14 @@ namespace SaveMyMoney
                     new Entry(totalCost)
                         {
                             Color=SKColor.Parse("#FF1943"),
-                            Label =LangSettings.TOTAL_COST,
+                            Label =LangSettings.InstanceOf.TOTAL_COST,
                             ValueLabel =  totalCost.ToString()
                         },
 
                     new Entry(totalIncome)
                         {
                             Color = SKColor.Parse("#36D746"),
-                            Label = LangSettings.TOTAL_INCOME,
+                            Label = LangSettings.InstanceOf.TOTAL_INCOME,
                             ValueLabel = totalIncome.ToString()
                         }
                 };

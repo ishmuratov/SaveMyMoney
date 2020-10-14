@@ -31,9 +31,18 @@ namespace SaveMyMoney
                 .ToList();
 
             TotalBalance = CalculateTotalBalance();
-            LbTotalBalance.Text = LangSettings.TOTAL_BALANCE +  ":";
-            tbReport.Text = LangSettings.REPORT;
+            LbTotalBalance.Text = LangSettings.InstanceOf.TOTAL_BALANCE +  ":";
+            tbReport.Text = LangSettings.InstanceOf.REPORT;
             LbTotalBalanceAmount.Text = TotalBalance.ToString();
+
+            if (App.Language.Equals("English"))
+            {
+                imageLang.Source = "english_small.png";
+            }
+            else
+            {
+                imageLang.Source = "russian_small.png";
+            }
         }
 
         private List<Note> GetWeekNotes()
@@ -99,6 +108,32 @@ namespace SaveMyMoney
         private void AboutClicked(object sender, EventArgs e)
         {
             DisplayAlert("Information", "Version: 1.0.0.", "OK");
+        }
+
+        private void SetLanguageClicked(object sender, EventArgs e)
+        {
+            var filename = Path.Combine(App.FolderPath, AppSettings.LANGUAGE_FILENAME);
+            if (App.Language.Equals("Russian"))
+            {
+                App.Language = "English";
+                LangSettings.InstanceOf.SetLanguage();
+                imageLang.Source = "english_small.png";
+                FileWorker.WriteTextToFile("English",filename);
+            }
+            else
+            {
+                App.Language = "Russian";
+                LangSettings.InstanceOf.SetLanguage();
+                imageLang.Source = "russian_small.png";
+                FileWorker.WriteTextToFile("Russian", filename);
+            }
+            SetTextFromNewLanguage();
+        }
+
+        private void SetTextFromNewLanguage()
+        {
+            LbTotalBalance.Text = LangSettings.InstanceOf.TOTAL_BALANCE + ":";
+            tbReport.Text = LangSettings.InstanceOf.REPORT;
         }
     }
 }

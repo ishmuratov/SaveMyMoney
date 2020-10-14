@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SaveMyMoney.NotesPage"
-             Title="Save My Money">
+             Title="$ave My Money">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="tbReport" Clicked="OnReportClicked"
                      />
@@ -12,6 +12,13 @@
     <StackLayout>
         <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
             <StackLayout>
+                <Image x:Name="imageLang" Source="english_small.png" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="SetLanguageClicked"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
                 <Label x:Name="LbTotalBalance" HorizontalOptions="CenterAndExpand"/>
                 <Label x:Name="LbTotalBalanceAmount" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
                 <Grid>

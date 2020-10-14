@@ -23,9 +23,9 @@ namespace SaveMyMoney
 
         protected override void OnAppearing()
         {
-            EdNewGroupName.Placeholder = LangSettings.ENTER_NAME_OF_NEW_GROPE;
-            btCreate.Text = LangSettings.ADD_GROPE;
-            btDelete.Text = LangSettings.DELETE_GROUP;
+            EdNewGroupName.Placeholder = LangSettings.InstanceOf.ENTER_NAME_OF_NEW_GROPE;
+            btCreate.Text = LangSettings.InstanceOf.ADD_GROPE;
+            btDelete.Text = LangSettings.InstanceOf.DELETE_GROUP;
             pickerGroups.Items.Clear();
             foreach (Group anyGroup in App.MoneyGroups.GroupList)
             {
@@ -44,7 +44,7 @@ namespace SaveMyMoney
         {
             if (EdNewGroupName.Text == null)
             {
-                await DisplayAlert(LangSettings.WARNING, LangSettings.GROUP_IS_EMPTY, "OK");
+                await DisplayAlert(LangSettings.InstanceOf.WARNING, LangSettings.InstanceOf.GROUP_IS_EMPTY, "OK");
                 return;
             }
             Group newGroup = new Group { ID = 0, Name = EdNewGroupName.Text, isCost = this.isCost};

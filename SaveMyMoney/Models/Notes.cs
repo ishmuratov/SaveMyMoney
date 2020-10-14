@@ -47,7 +47,7 @@ namespace SaveMyMoney.Models
 
         public void SaveData()
         {
-            FileWorker.SaveToFile(App.DataBase, Path.Combine(App.FolderPath, AppSettings.DATABASE_FILENAME));
+            FileWorker.SaveDataToFile(App.DataBase, Path.Combine(App.FolderPath, AppSettings.DATABASE_FILENAME));
         }
     }
 }

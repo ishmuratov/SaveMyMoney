@@ -13,15 +13,17 @@ namespace SaveMyMoney
         public static Notes DataBase { get; private set; }
 
         public static Groups MoneyGroups { get; private set; }
+        public static string Language {get; set;}
 
         public App()
         {
             InitializeComponent();
             FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
             var filename = Path.Combine(FolderPath, AppSettings.DATABASE_FILENAME);
-            DataBase = (Notes)FileWorker.LoadFromFile(filename);
+            DataBase = (Notes)FileWorker.LoadDataFromFile(filename);
             filename = Path.Combine(FolderPath, AppSettings.GROUPS_FILENAME);
-            MoneyGroups = (Groups)FileWorker.LoadFromFile(filename);
+            MoneyGroups = (Groups)FileWorker.LoadDataFromFile(filename);
+            filename = Path.Combine(FolderPath, AppSettings.LANGUAGE_FILENAME);
             if (DataBase == null)
             {
                 DataBase = new Notes();
@@ -29,6 +31,19 @@ namespace SaveMyMoney
             if (MoneyGroups == null)
             {
                 MoneyGroups = new Groups();
+            }
+
+            filename = Path.Combine(App.FolderPath, AppSettings.LANGUAGE_FILENAME);
+            if (File.Exists(filename))
+            {
+                Language = FileWorker.ReadTextFromFile(filename);
+                LangSettings.InstanceOf.SetLanguage();
+            }
+            else
+            {
+                Language = "English";
+                LangSettings.InstanceOf.SetLanguage();
+                FileWorker.WriteTextToFile("English",filename);
             }
             MainPage = new NavigationPage(new NotesPage());
         }

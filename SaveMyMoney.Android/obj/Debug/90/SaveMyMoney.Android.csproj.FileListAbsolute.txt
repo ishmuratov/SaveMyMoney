@@ -500,3 +500,5 @@ D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\90\android\assets\System.Linq.dll
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\90\android\assets\System.Runtime.Extensions.dll
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\90\android\assets\System.ValueTuple.dll
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\90\res\drawable\english_small.png
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Debug\90\res\drawable\russian_small.png

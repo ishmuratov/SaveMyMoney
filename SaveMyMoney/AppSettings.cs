@@ -7,6 +7,7 @@ namespace SaveMyMoney
     public static class AppSettings
     {
         public static string DATABASE_FILENAME = "DB.dat";
+        public static string LANGUAGE_FILENAME = "lang.dat";
         public static string GROUPS_FILENAME = "Groups.dat";
     }
 }

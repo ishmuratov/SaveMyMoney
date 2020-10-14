@@ -22,12 +22,12 @@ namespace SaveMyMoney
 
         protected override void OnAppearing()
         {
-            tbAddGroup.Text = LangSettings.ADD_GROPE;
-            btSave.Text = LangSettings.SAVE;
-            btDelete.Text = LangSettings.DELETE;
-            LbAmount.Text = LangSettings.AMOUNT + ":";
-            LbGroups.Text = LangSettings.GROUP + ":";
-            editComment.Placeholder = LangSettings.ENTER_YOUR_COMMENT + "...";
+            tbAddGroup.Text = LangSettings.InstanceOf.ADD_GROPE;
+            btSave.Text = LangSettings.InstanceOf.SAVE;
+            btDelete.Text = LangSettings.InstanceOf.DELETE;
+            LbAmount.Text = LangSettings.InstanceOf.AMOUNT + ":";
+            LbGroups.Text = LangSettings.InstanceOf.GROUP + ":";
+            editComment.Placeholder = LangSettings.InstanceOf.ENTER_YOUR_COMMENT + "...";
             editComment.FontSize = 15;
             var note = (Note)BindingContext;
             if (note.isCost)
@@ -62,7 +62,7 @@ namespace SaveMyMoney
         {
             if (pickerGroups.Title == "")
             {
-                await DisplayAlert("Warning", "Group is empty!", "OK");
+                await DisplayAlert(LangSettings.InstanceOf.WARNING, LangSettings.InstanceOf.GROUP_IS_EMPTY, "OK");
                 return;
             }
             var note = (Note)BindingContext;
@@ -82,7 +82,7 @@ namespace SaveMyMoney
                 }
                 else
                 {
-                    await DisplayAlert("Warning", "Bad amount!", "OK");
+                    await DisplayAlert(LangSettings.InstanceOf.WARNING, LangSettings.InstanceOf.BAD_AMOUNT, "OK");
                     return;
                 }
             }

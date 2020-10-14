@@ -9,7 +9,7 @@ namespace SaveMyMoney.Helpers
 {
     class FileWorker
     {
-        public static void SaveToFile(IData _data, string _filePath)
+        public static void SaveDataToFile(IData _data, string _filePath)
         {
             if (_data == null)
             {
@@ -30,7 +30,7 @@ namespace SaveMyMoney.Helpers
             }
         }
 
-        public static IData LoadFromFile(string filePath)
+        public static IData LoadDataFromFile(string filePath)
         {
             if (string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath))
             {
@@ -53,14 +53,11 @@ namespace SaveMyMoney.Helpers
             return null;
         }
 
-        public static void WriteToFile(string _data, string _filePath)
+        public static void WriteTextToFile(string _data, string _filePath)
         {
             try
             {
-                using (StreamWriter sw = new StreamWriter(_filePath, true))
-                {
-                    sw.WriteLine(_data);
-                }
+                File.WriteAllText(_filePath, _data);
             }
             catch (Exception _ex)
             {
@@ -68,5 +65,17 @@ namespace SaveMyMoney.Helpers
             }
         }
 
+        public static string ReadTextFromFile(string _filePath)
+        {
+            try
+            {
+                return File.ReadAllText(_filePath);
+            }
+            catch (Exception _ex)
+            {
+                return string.Empty;
+                //Logger.IOLog($"Ошибка. Файл {_filePath} не может быть сохранён. " + _ex.Message);
+            }
+        }
     }
 }

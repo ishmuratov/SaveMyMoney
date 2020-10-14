@@ -15,8 +15,8 @@ namespace SaveMyMoney.Models
         public Groups()
         {
             GroupList = new List<Group>();
-            GroupList.Add(new Group { ID = 0, Name = LangSettings.SALARY, isCost = false });
-            GroupList.Add(new Group { ID = 0, Name = LangSettings.PRIZE , isCost = false});
+            GroupList.Add(new Group { ID = 0, Name = LangSettings.InstanceOf.SALARY, isCost = false });
+            GroupList.Add(new Group { ID = 0, Name = LangSettings.InstanceOf.PRIZE , isCost = false});
         }
 
         public void AddGroup(Group newGroup)
@@ -48,7 +48,7 @@ namespace SaveMyMoney.Models
 
         private void SaveData()
         {
-            FileWorker.SaveToFile(App.MoneyGroups, Path.Combine(App.FolderPath, AppSettings.GROUPS_FILENAME));
+            FileWorker.SaveDataToFile(App.MoneyGroups, Path.Combine(App.FolderPath, AppSettings.GROUPS_FILENAME));
         }
     }
 }

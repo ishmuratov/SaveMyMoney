@@ -23,7 +23,7 @@ namespace SaveMyMoney
 
         protected override void OnAppearing()
         {
-            pickerGroups.Title = LangSettings.CHOOSE_GROUPE;
+            pickerGroups.Title = LangSettings.InstanceOf.CHOOSE_GROUPE;
 
             listView.ItemsSource = monthlyNotes
                 .OrderByDescending(d => d.Date)
