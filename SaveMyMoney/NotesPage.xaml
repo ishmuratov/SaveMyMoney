@@ -4,9 +4,9 @@
              x:Class="SaveMyMoney.NotesPage"
              Title="Save My Money">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Report" Clicked="OnReportClicked"
+        <ToolbarItem x:Name="tbReport" Clicked="OnReportClicked"
                      />
-        <ToolbarItem Text="?"
+        <ToolbarItem Text="?" Clicked="AboutClicked"
                      />
     </ContentPage.ToolbarItems>
     <StackLayout>

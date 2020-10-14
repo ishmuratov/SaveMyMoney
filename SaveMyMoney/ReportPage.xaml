@@ -10,28 +10,28 @@
         <ScrollView>
             <StackLayout >
 
-                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
-                    <Picker x:Name="pickerMonth" Title="Choose a month" SelectedIndexChanged="OnMonthChanged"/>
+                <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+                    <Picker x:Name="pickerMonth" SelectedIndexChanged="OnMonthChanged"/>
                 </Frame>
 
-                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
+                <Frame x:Name="frTotal" Grid.Column="2" CornerRadius="10" OutlineColor="Black">
                     <StackLayout>
-                        <Label x:Name="lbTotalIncome" Text="Total Income: 0" TextColor="Green"
+                        <Label x:Name="lbTotalIncome" TextColor="Green"
                    HorizontalOptions="CenterAndExpand" />
-                        <Label x:Name="lbTotalCost" Text="Total cost: 0" TextColor="Red"
+                        <Label x:Name="lbTotalCost" TextColor="Red"
                    HorizontalOptions="CenterAndExpand" />
                     </StackLayout>
                 </Frame>
-                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
+                <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black">
                     <StackLayout>
                         <forms:ChartView x:Name="Chart4"  
-                             HeightRequest="200"/>
-                        <Button x:Name="btDatails" HeightRequest="40" HorizontalOptions="End" Clicked="OnDatailsClicked"/>
+                             HeightRequest="180"/>
+                        <Button x:Name="btDatails" HeightRequest="35" HorizontalOptions="End" Clicked="OnDatailsClicked"/>
                     </StackLayout>
                 </Frame>
 
-                <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
-                    <Picker x:Name="pickerMode" Title="Choose a mode" SelectedIndexChanged="OnModeChanged"/>
+                <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+                    <Picker x:Name="pickerMode" SelectedIndexChanged="OnModeChanged"/>
                 </Frame>
 
             </StackLayout>

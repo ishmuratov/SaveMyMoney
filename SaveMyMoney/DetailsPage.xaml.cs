@@ -1,4 +1,5 @@
-﻿using SaveMyMoney.Models;
+﻿using SaveMyMoney.Helpers;
+using SaveMyMoney.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace SaveMyMoney
 
         protected override void OnAppearing()
         {
-            //var notes = App.DataBase.NotesList;
+            pickerGroups.Title = LangSettings.CHOOSE_GROUPE;
+
             listView.ItemsSource = monthlyNotes
                 .OrderByDescending(d => d.Date)
                 .ToList();

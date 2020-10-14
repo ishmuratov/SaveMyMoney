@@ -1,4 +1,5 @@
-﻿using SaveMyMoney.Models;
+﻿using SaveMyMoney.Helpers;
+using SaveMyMoney.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,7 +31,8 @@ namespace SaveMyMoney
                 .ToList();
 
             TotalBalance = CalculateTotalBalance();
-            LbTotalBalance.Text = "Total Balance:";
+            LbTotalBalance.Text = LangSettings.TOTAL_BALANCE +  ":";
+            tbReport.Text = LangSettings.REPORT;
             LbTotalBalanceAmount.Text = TotalBalance.ToString();
         }
 
@@ -92,6 +94,11 @@ namespace SaveMyMoney
         async void OnReportClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ReportPage());
+        }
+
+        private void AboutClicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Information", "Version: 1.0.0.", "OK");
         }
     }
 }

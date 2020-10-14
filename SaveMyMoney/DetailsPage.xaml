@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
-                <Picker x:Name="pickerGroups" Title="Choose a group" SelectedIndexChanged="OnGroupChanged"/>
+                <Picker x:Name="pickerGroups" SelectedIndexChanged="OnGroupChanged"/>
             </Frame>
             <ListView x:Name="listView"
               Margin="20">
