@@ -17,17 +17,26 @@ namespace SaveMyMoney
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ReportPage : ContentPage
     {
+        int Year = DateTime.Now.Year;
         List<Note> monthlyNotes = new List<Note>();
         public ReportPage()
         {
             InitializeComponent();
+            LoadDefaultValues();
+            
+        }
+
+        private void LoadDefaultValues()
+        {
             AddMonthesToPicker();
             AddModeToPicker();
-            btDatails.IsEnabled = false;
+            AddYearsToPicker();
             pickerMonth.Title = LangSettings.CHOOSE_MONTH;
             pickerMode.Title = LangSettings.CHOOSE_MODE;
+            pickerYear.Title = DateTime.Now.Year.ToString();
             lbTotalCost.Text = LangSettings.TOTAL_COST + ": 0";
             lbTotalIncome.Text = LangSettings.TOTAL_INCOME + ": 0";
+            btDatails.IsEnabled = false;
         }
 
         private void AddMonthesToPicker()
@@ -50,6 +59,17 @@ namespace SaveMyMoney
         {
             pickerMode.Items.Add(LangSettings.ALL_COSTS);
             pickerMode.Items.Add(LangSettings.TOTAL_INCOME_COST);
+        }
+
+        private void AddYearsToPicker()
+        {
+            pickerYear.Items.Add((DateTime.Now.Year - 3).ToString());
+            pickerYear.Items.Add((DateTime.Now.Year - 2).ToString());
+            pickerYear.Items.Add((DateTime.Now.Year - 1).ToString());
+            pickerYear.Items.Add(DateTime.Now.Year.ToString());
+            pickerYear.Items.Add((DateTime.Now.Year + 1).ToString());
+            pickerYear.Items.Add((DateTime.Now.Year + 2).ToString());
+            pickerYear.Items.Add((DateTime.Now.Year + 3).ToString());
         }
 
         private void OnMonthChanged(object sender, EventArgs e)
@@ -96,7 +116,7 @@ namespace SaveMyMoney
                 }
             }
 
-            Chart4.Chart = new BarChart() { Entries = costEnties};
+            ChartBar.Chart = new BarChart() { Entries = costEnties};
             pickerMode.SelectedIndex = 0;
             btDatails.IsEnabled = true;
         }
@@ -111,7 +131,7 @@ namespace SaveMyMoney
             int result = 0;
             foreach (Note anyNote in App.DataBase.NotesList)
             {
-                if (anyNote.Date.Month == month && anyNote.isCost)
+                if (anyNote.Date.Year == Year && anyNote.Date.Month == month && anyNote.isCost)
                 {
                     result += anyNote.Amount;
                 }
@@ -124,7 +144,7 @@ namespace SaveMyMoney
             int result = 0;
             foreach (Note anyNote in App.DataBase.NotesList)
             {
-                if (anyNote.Date.Month == month && !anyNote.isCost)
+                if (anyNote.Date.Year == Year && anyNote.Date.Month == month && !anyNote.isCost)
                 {
                     result += anyNote.Amount;
                 }
@@ -137,7 +157,7 @@ namespace SaveMyMoney
             List<Note> notes = new List<Note>();
             foreach (Note anyNote in App.DataBase.NotesList)
             {
-                if (anyNote.Date.Month == monthNumber)
+                if (anyNote.Date.Year == Year && anyNote.Date.Month == monthNumber)
                 {
                     notes.Add(anyNote);
                 }
@@ -181,7 +201,17 @@ namespace SaveMyMoney
                             ValueLabel = totalIncome.ToString()
                         }
                 };
-            Chart4.Chart = new BarChart() { Entries = entries };
+            ChartBar.Chart = new BarChart() { Entries = entries };
+        }
+
+        private void OnYearChanged(object sender, EventArgs e)
+        {
+            bool resultParse = int.TryParse(pickerYear.Items[pickerYear.SelectedIndex], out int tempYear);
+            if (resultParse)
+            {
+                Year = tempYear;
+                OnMonthChanged(sender, e);
+            }
         }
     }
 }

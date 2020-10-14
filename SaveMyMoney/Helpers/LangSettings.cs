@@ -4,8 +4,9 @@ using System.Text;
 
 namespace SaveMyMoney.Helpers
 {
-    static class LangSettings
+    class LangSettings
     {
+        public static LangSettings InstanceOf = new LangSettings();
         public static string Language;
         public static string SALARY;
         public static string PRIZE;
@@ -106,9 +107,9 @@ namespace SaveMyMoney.Helpers
                 TOTAL_COST = "Общий расход";
                 TOTAL_INCOME = "Общий доход";
                 DETAILS = "Детали";
-                CHOOSE_MONTH = "Выберете месяц";
-                CHOOSE_MODE = "Выберете режим";
-                CHOOSE_GROUPE = "Выберете группу";
+                CHOOSE_MONTH = "Выберите месяц";
+                CHOOSE_MODE = "Выберите режим";
+                CHOOSE_GROUPE = "Выберите группу";
                 // MONTHES
                 JENUARY = "Январь";
                 FEBRUARY = "Февраль";

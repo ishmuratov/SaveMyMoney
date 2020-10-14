@@ -11,7 +11,15 @@
             <StackLayout >
 
                 <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
-                    <Picker x:Name="pickerMonth" SelectedIndexChanged="OnMonthChanged"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <Picker x:Name="pickerMonth" Grid.Column="0" SelectedIndexChanged="OnMonthChanged"/>
+                        <Picker x:Name="pickerYear" Grid.Column="2" SelectedIndexChanged="OnYearChanged"/>
+                    </Grid>
                 </Frame>
 
                 <Frame x:Name="frTotal" Grid.Column="2" CornerRadius="10" OutlineColor="Black">
@@ -24,7 +32,7 @@
                 </Frame>
                 <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black">
                     <StackLayout>
-                        <forms:ChartView x:Name="Chart4"  
+                        <forms:ChartView x:Name="ChartBar"  
                              HeightRequest="180"/>
                         <Button x:Name="btDatails" HeightRequest="35" HorizontalOptions="End" Clicked="OnDatailsClicked"/>
                     </StackLayout>
