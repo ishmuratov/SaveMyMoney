@@ -15,6 +15,7 @@ namespace SaveMyMoney.Models
         public DateTime Date { get; set; }
         public bool isCost { get; set; }
         public Group MoneyGroup { get; set; }
+        public string Details { get { return MoneyGroup.ToString() + " - " + Text; } }
 
         public Note()
         {

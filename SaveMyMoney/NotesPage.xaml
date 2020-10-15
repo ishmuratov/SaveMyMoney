@@ -9,10 +9,10 @@
         <ToolbarItem Text="?" Clicked="AboutClicked"
                      />
     </ContentPage.ToolbarItems>
-    <StackLayout>
-        <Frame Grid.Column="2" CornerRadius="10" OutlineColor="Black" BackgroundColor="AliceBlue">
+    <StackLayout BackgroundColor="AliceBlue">
+        <Frame x:Name="frameBalance" Grid.Column="2" CornerRadius="10" OutlineColor="Black">
             <StackLayout>
-                <Image x:Name="imageLang" Source="english_small.png" HorizontalOptions="End">
+                <Image x:Name="imageLang" HorizontalOptions="End">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
                             Tapped="SetLanguageClicked"
@@ -38,14 +38,14 @@
                 </Grid>
             </StackLayout>
         </Frame>
-        <StackLayout>
+        <StackLayout BackgroundColor="AliceBlue">
             <ListView x:Name="listView"
-              Margin="20"
-              ItemSelected="OnListViewItemSelected" >
+                    Margin="20"
+                    ItemSelected="OnListViewItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ImageCell Text="{Binding TextAmount}"
-                          Detail="{Binding MoneyGroup}"
+                          Detail="{Binding Details}"
                           ImageSource="{Binding ImagePath}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>

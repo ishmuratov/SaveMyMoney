@@ -19,8 +19,11 @@ namespace SaveMyMoney.Models
 
         public void AddNote(Note newNote)
         {
-            NotesList.Add(newNote);
-            SaveData();
+            if (newNote != null)
+            {
+                NotesList.Add(newNote);
+                SaveData();
+            }
         }
 
         public void DeleteNote(Note noteForDeleting)

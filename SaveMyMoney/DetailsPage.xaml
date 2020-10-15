@@ -6,8 +6,8 @@
              mc:Ignorable="d"
              x:Class="SaveMyMoney.DetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black" BackgroundColor="AliceBlue">
+        <StackLayout BackgroundColor="AliceBlue">
+            <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
                 <Picker x:Name="pickerGroups" SelectedIndexChanged="OnGroupChanged"/>
             </Frame>
             <ListView x:Name="listView"

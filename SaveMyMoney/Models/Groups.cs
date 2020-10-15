@@ -21,8 +21,11 @@ namespace SaveMyMoney.Models
 
         public void AddGroup(Group newGroup)
         {
-            GroupList.Add(newGroup);
-            SaveData();
+            if (newGroup != null)
+            {
+                GroupList.Add(newGroup);
+                SaveData();
+            }
         }
 
         public void DeleteGroup(string text)

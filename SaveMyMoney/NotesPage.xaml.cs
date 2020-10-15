@@ -24,27 +24,18 @@ namespace SaveMyMoney
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            DisplayNotes();
+            DisplayTotalBalance();
+            DisplayLanguageIcon();
+        }
 
+        private void DisplayNotes()
+        {
             var notes = GetWeekNotes();
             listView.ItemsSource = notes
                 .OrderByDescending(d => d.Date)
                 .ToList();
-
-            TotalBalance = CalculateTotalBalance();
-            LbTotalBalance.Text = LangSettings.InstanceOf.TOTAL_BALANCE +  ":";
-            tbReport.Text = LangSettings.InstanceOf.REPORT;
-            LbTotalBalanceAmount.Text = TotalBalance.ToString();
-
-            if (App.Language.Equals("English"))
-            {
-                imageLang.Source = "english_small.png";
-            }
-            else
-            {
-                imageLang.Source = "russian_small.png";
-            }
         }
-
         private List<Note> GetWeekNotes()
         {
             List<Note> result = new List<Note>();
@@ -57,6 +48,13 @@ namespace SaveMyMoney
                 }
             }
             return result;
+        }
+
+        private void DisplayTotalBalance()
+        {
+            TotalBalance = CalculateTotalBalance();
+            LbTotalBalance.Text = LangSettings.InstanceOf.TOTAL_BALANCE + ":";
+            LbTotalBalanceAmount.Text = TotalBalance.ToString();
         }
         private int CalculateTotalBalance()
         {
@@ -71,6 +69,19 @@ namespace SaveMyMoney
             return result;
         }
 
+        private void DisplayLanguageIcon()
+        {
+            tbReport.Text = LangSettings.InstanceOf.REPORT;
+
+            if (App.Language.Equals("English"))
+            {
+                imageLang.Source = "english_small.png";
+            }
+            else
+            {
+                imageLang.Source = "russian_small.png";
+            }
+        }
         async void OnNoteAddedClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new NoteEntryPage

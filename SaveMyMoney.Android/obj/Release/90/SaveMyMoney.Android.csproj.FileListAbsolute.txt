@@ -418,3 +418,5 @@ D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Releas
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Release\90\android\src\crc64bb223c2be3a01e03\SKGLViewRenderer.java
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Release\90\android\src\crc64bb223c2be3a01e03\SKGLViewRendererBase_2.java
 D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Release\90\android\src\crc64e9f97cf19b8286a9\ChartView.java
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Release\90\res\drawable\english_small.png
+D:\CSharp\Projects\Mobile\SaveMyMoney\SaveMyMoney\SaveMyMoney.Android\obj\Release\90\res\drawable\russian_small.png
