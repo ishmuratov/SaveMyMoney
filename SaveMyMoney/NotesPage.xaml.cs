@@ -26,6 +26,7 @@ namespace SaveMyMoney
             base.OnAppearing();
             DisplayNotes();
             DisplayTotalBalance();
+            DisplayDaylyBalance(GetDaylyBalance());
             DisplayLanguageIcon();
         }
 
@@ -35,6 +36,26 @@ namespace SaveMyMoney
             listView.ItemsSource = notes
                 .OrderByDescending(d => d.Date)
                 .ToList();
+        }
+
+        private int GetDaylyBalance()
+        {
+            int DaylyBalance = 0;
+            foreach (Note anyNote in GetWeekNotes())
+            {
+                if (anyNote.Date.Date == DateTime.Today)
+                {
+                    if (anyNote.isCost)
+                    {
+                        DaylyBalance -= anyNote.Amount;
+                    }
+                    else
+                    {
+                        DaylyBalance += anyNote.Amount;
+                    }
+                }
+            }
+            return DaylyBalance;
         }
         private List<Note> GetWeekNotes()
         {
@@ -67,6 +88,25 @@ namespace SaveMyMoney
                     result += anyNote.Amount;
             }
             return result;
+        }
+
+        private void DisplayDaylyBalance(int DaylyBalance)
+        {
+            if (DaylyBalance < 0)
+            {
+                lbDaylyBalance.Text = "-" + DaylyBalance.ToString();
+                lbDaylyBalance.TextColor = Color.FromHex("#EBA9A9");
+            }
+            if (DaylyBalance == 0)
+            {
+                lbDaylyBalance.Text = DaylyBalance.ToString();
+                lbDaylyBalance.TextColor = Color.FromHex("#ABF2B0");
+            }
+            if (DaylyBalance > 0)
+            {
+                lbDaylyBalance.Text = "+" + DaylyBalance.ToString();
+                lbDaylyBalance.TextColor = Color.FromHex("#ABF2B0");
+            }
         }
 
         private void DisplayLanguageIcon()
@@ -145,6 +185,7 @@ namespace SaveMyMoney
         {
             LbTotalBalance.Text = LangSettings.InstanceOf.TOTAL_BALANCE + ":";
             tbReport.Text = LangSettings.InstanceOf.REPORT;
+            DisplayNotes();
         }
     }
 }

@@ -12,14 +12,21 @@
     <StackLayout BackgroundColor="AliceBlue">
         <Frame x:Name="frameBalance" Grid.Column="2" CornerRadius="10" OutlineColor="Black">
             <StackLayout>
-                <Image x:Name="imageLang" HorizontalOptions="End">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="imageLang" HorizontalOptions="End" Grid.Column="1">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
                             Tapped="SetLanguageClicked"
-                            NumberOfTapsRequired="1" />
+                            NumberOfTapsRequired="0" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Label Grid.Column="0" x:Name="lbDaylyBalance" HorizontalOptions="End"/>
+                <Label Grid.Column="1"
+                            Text="-"/>
+                </Grid>
                 <Label x:Name="LbTotalBalance" HorizontalOptions="CenterAndExpand"/>
                 <Label x:Name="LbTotalBalanceAmount" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
                 <Grid>
