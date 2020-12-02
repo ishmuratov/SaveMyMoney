@@ -33,19 +33,32 @@ namespace SaveMyMoney
             {
                 pickerGroups.Items.Add(anyGroup.Name);
             }
+
+            int totalCost = 0;
+            foreach (Note anyNote in monthlyNotes)
+            {
+                if (anyNote.isCost)
+                {
+                    totalCost += anyNote.Amount;
+                }
+            }
+            tbTotal.Text = $"{LangSettings.InstanceOf.TOTAL_COST}: {totalCost}";
         }
 
         void OnGroupChanged(object sender, EventArgs e)
         {
             pickerGroups.Title = pickerGroups.Items[pickerGroups.SelectedIndex];
+            int totalAmount = 0;
             List<Note> monthlyNotesInGroup = new List<Note>();
             foreach (Note anyNote in monthlyNotes)
             {
                 if (anyNote.MoneyGroup != null && anyNote.MoneyGroup.Name.Equals(pickerGroups.Title))
                 {
                     monthlyNotesInGroup.Add(anyNote);
+                    totalAmount += anyNote.Amount;
                 }
             }
+            tbTotal.Text = $"{LangSettings.InstanceOf.TOTAL}: {totalAmount}";
             listView.ItemsSource = monthlyNotesInGroup.OrderByDescending(d => d.Date).ToList();
         }
     }

@@ -25,6 +25,7 @@ namespace SaveMyMoney.Helpers
         public string TOTAL_INCOME_COST;
         public string TOTAL_COST;
         public string TOTAL_INCOME;
+        public string TOTAL;
         public string DETAILS;
         public string CHOOSE_MONTH;
         public string CHOOSE_MODE;
@@ -67,6 +68,7 @@ namespace SaveMyMoney.Helpers
                 InstanceOf.TOTAL_INCOME_COST = "Total income/cost";
                 InstanceOf.TOTAL_COST = "Total cost";
                 InstanceOf.TOTAL_INCOME = "Total income";
+                InstanceOf.TOTAL = "Total";
                 InstanceOf.DETAILS = "Details";
                 InstanceOf.CHOOSE_MONTH = "Choose a month";
                 InstanceOf.CHOOSE_MODE = "Choose a mode";
@@ -106,6 +108,7 @@ namespace SaveMyMoney.Helpers
                 InstanceOf.TOTAL_INCOME_COST = "Общий доход/расход";
                 InstanceOf.TOTAL_COST = "Общий расход";
                 InstanceOf.TOTAL_INCOME = "Общий доход";
+                InstanceOf.TOTAL = "Итого";
                 InstanceOf.DETAILS = "Детали";
                 InstanceOf.CHOOSE_MONTH = "Выберите месяц";
                 InstanceOf.CHOOSE_MODE = "Выберите режим";

@@ -23,10 +23,10 @@ namespace SaveMyMoney {
         private global::Xamarin.Forms.Frame frameBalance;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Image imageLang;
+        private global::Xamarin.Forms.Label lbDaylyBalance;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label lbDaylyBalance;
+        private global::Xamarin.Forms.Image imageLang;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label LbTotalBalance;
@@ -42,8 +42,8 @@ namespace SaveMyMoney {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NotesPage));
             tbReport = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ToolbarItem>(this, "tbReport");
             frameBalance = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Frame>(this, "frameBalance");
-            imageLang = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageLang");
             lbDaylyBalance = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lbDaylyBalance");
+            imageLang = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "imageLang");
             LbTotalBalance = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LbTotalBalance");
             LbTotalBalanceAmount = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LbTotalBalanceAmount");
             listView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "listView");

@@ -158,7 +158,7 @@ namespace SaveMyMoney
 
         private void AboutClicked(object sender, EventArgs e)
         {
-            DisplayAlert("Information", "Version: 1.0.0.", "OK");
+            DisplayAlert("Information", "Version: 1.0.1.", "OK");
         }
 
         private void SetLanguageClicked(object sender, EventArgs e)

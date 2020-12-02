@@ -12,6 +12,7 @@
     <StackLayout BackgroundColor="AliceBlue">
         <Frame x:Name="frameBalance" Grid.Column="2" CornerRadius="10" OutlineColor="Black">
             <StackLayout>
+                <Label Grid.Column="0" x:Name="lbDaylyBalance" HorizontalOptions="Fill"/>
                 <Image x:Name="imageLang" HorizontalOptions="End">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -19,7 +20,6 @@
                             NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Label Grid.Column="0" x:Name="lbDaylyBalance" HorizontalOptions="End"/>
                 <Label x:Name="LbTotalBalance" HorizontalOptions="CenterAndExpand"/>
                 <Label x:Name="LbTotalBalanceAmount" FontSize="Header" HorizontalOptions="CenterAndExpand"/>
                 <Grid>
@@ -28,12 +28,12 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <Button Text="+" FontSize="Large" FontAttributes="Bold"
-                            HeightRequest="120" WidthRequest="250" HorizontalOptions="Center" 
+                            HeightRequest="145" WidthRequest="250" HorizontalOptions="Center" 
                             TextColor="Gray" BackgroundColor="#ABF2B0"
                             CornerRadius="10" Clicked="OnNoteAddedClicked" />
                     <Button Grid.Column="1"
                             Text="-" FontSize="Large" FontAttributes="Bold"
-                            HeightRequest="120" WidthRequest="250" HorizontalOptions="Center"
+                            HeightRequest="145" WidthRequest="250" HorizontalOptions="Center"
                             TextColor="Gray" BackgroundColor="#EBA9A9"
                             CornerRadius="10" Clicked="OnCostNoteAddedClicked"/>
                 </Grid>

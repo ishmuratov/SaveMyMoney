@@ -5,6 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SaveMyMoney.DetailsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="tbTotal"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout BackgroundColor="AliceBlue">
             <Frame Grid.Column="2" CornerRadius="10" Margin="2" OutlineColor="Black">
